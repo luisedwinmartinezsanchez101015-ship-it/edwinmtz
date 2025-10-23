@@ -1,0 +1,675 @@
+:root {
+  /* Paleta de Colores (Azul/Violeta) */
+  --color-bg: #0B0F19; /* Un azul casi negro */
+  --color-texto: #F0F0F0;
+  --color-gris: #aeb8d0;
+  --color-cian: #00F6FF;
+  --color-azul: #007BFF;
+  --color-violeta: #8E44AD;
+
+  /* Estilos para Glassmorphism */
+  --color-glass: rgba(255, 255, 255, 0.05); /* El fondo de cristal */
+  --color-borde-glass: rgba(255, 255, 255, 0.1); /* El borde sutil */
+  --blur-glass: 15px;
+
+  /* Tipografía y Varios */
+  --fuente: "Poppins", sans-serif;
+  --radius: 16px; /* Bordes más redondeados para el efecto cristal */
+  --trans: 0.4s ease;
+  --espaciado: 120px;
+}
+
+/* ========= 2. RESETEO GLOBAL Y ESTILOS BASE ========= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--fuente);
+  background-color: var(--color-bg);
+  /* Fondo con un degradado sutil para dar profundidad */
+  background-image: radial-gradient(ellipse at bottom, #1B2735 0%, #0B0F19 100%);
+  color: var(--color-texto);
+  line-height: 1.7;
+  overflow-x: hidden;
+  /* Animación de entrada sutil */
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* La sección clara ahora es transparente para el fondo */
+.seccion-clara {
+  background-color: transparent;
+}
+
+/* ========= 3. ENCABEZADO (HEADER) - ESTILO GLASSMORPHISM ========= */
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  /* Efecto Glassmorphism */
+  background: var(--color-glass);
+  backdrop-filter: blur(var(--blur-glass));
+  -webkit-backdrop-filter: blur(var(--blur-glass)); /* Para Safari */
+  border-bottom: 1px solid var(--color-borde-glass);
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  /* Texto en degradado */
+  background: linear-gradient(90deg, var(--color-cian), var(--color-violeta));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 45px;
+}
+.menu a {
+  text-decoration: none;
+  color: var(--color-gris);
+  font-weight: 500;
+  transition: var(--trans);
+  position: relative;
+  padding-bottom: 8px;
+}
+.menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  /* Subrayado con degradado */
+  background: linear-gradient(90deg, var(--color-cian), var(--color-violeta));
+  transition: var(--trans);
+}
+.menu a:hover, .menu a.activo {
+  color: var(--color-texto);
+  transform: translateY(-2px);
+}
+.menu a:hover::after, .menu a.activo::after {
+  width: 100%;
+}
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: var(--color-cian);
+}
+
+/* ========= 4. SECCIÓN HERO ========= */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  text-align: center;
+  padding: 0 20px;
+}
+.hero-content {
+  max-width: 800px;
+}
+.hero h1 {
+  font-size: clamp(2.8rem, 7vw, 4.5rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.hero h1 span {
+  /* Título principal con degradado */
+  background: linear-gradient(90deg, var(--color-cian), var(--color-azul), var(--color-violeta));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(0, 246, 255, 0.3); /* Efecto Neón suave */
+}
+.hero p {
+  color: var(--color-gris);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Botón estilo "Neón" */
+.btn {
+  background: transparent;
+  border: 2px solid var(--color-cian);
+  color: var(--color-cian);
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--trans);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.btn:hover {
+  background: var(--color-cian);
+  color: #000;
+  box-shadow: 0 0 25px var(--color-cian); /* Efecto Neón al pasar el mouse */
+  transform: translateY(-5px) scale(1.05);
+}
+
+/* ========= 5. ESTILOS GENERALES DE SECCIÓN ========= */
+section {
+  padding: var(--espaciado) 8%;
+}
+.titulo-seccion {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--color-texto);
+  margin-bottom: 70px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /* Línea con degradado bajo el título */
+  position: relative;
+  padding-bottom: 15px;
+}
+.titulo-seccion::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-cian), var(--color-violeta));
+  border-radius: 2px;
+}
+
+/* ========= 6. SERVICIOS (TARJETAS DE CRISTAL) ========= */
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+.service {
+  /* Efecto Glassmorphism */
+  background: var(--color-glass);
+  backdrop-filter: blur(var(--blur-glass));
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  border: 1px solid var(--color-borde-glass);
+  
+  border-radius: var(--radius);
+  padding: 40px 30px;
+  transition: var(--trans);
+  text-align: center;
+}
+.service:hover {
+  transform: translateY(-10px);
+  border-color: var(--color-cian);
+  box-shadow: 0 0 30px rgba(0, 246, 255, 0.2); /* Sombra Neón suave */
+}
+.service i {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  /* Iconos con degradado */
+  background: linear-gradient(135deg, var(--color-cian), var(--color-azul));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.service h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--color-texto);
+}
+.service p {
+  color: var(--color-gris);
+}
+
+/* ========= 7. MI PROCESO (TARJETAS DE CRISTAL) ========= */
+.proceso-contenedor {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.paso {
+  /* Efecto Glassmorphism */
+  background: var(--color-glass);
+  border: 1px solid var(--color-borde-glass);
+  
+  padding: 30px;
+  border-radius: var(--radius);
+  text-align: center;
+  flex: 1;
+  min-width: 220px;
+  transition: var(--trans);
+}
+.paso:hover {
+  transform: translateY(-10px);
+  border-color: var(--color-violeta);
+  box-shadow: 0 0 30px rgba(142, 68, 173, 0.2); /* Sombra Neón violeta */
+}
+.paso .numero {
+  width: 50px;
+  height: 50px;
+  /* Número con degradado */
+  background: linear-gradient(135deg, var(--color-cian), var(--color-violeta));
+  color: #000;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 20px;
+}
+.paso h3 {
+  margin-bottom: 10px;
+  color: var(--color-texto);
+}
+.paso p {
+  color: var(--color-gris);
+}
+
+/* ========= 8. GALERÍA DE PROYECTOS (CON VIDEOS) ========= */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background-color: #222;
+  cursor: pointer;
+  /* Borde de cristal */
+  border: 1px solid var(--color-borde-glass);
+}
+.video-proyecto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease-in-out;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+  opacity: 1; /* Lo hacemos visible por defecto */
+  transition: background 0.4s ease-in-out;
+}
+
+/* Animación de Zoom y Overlay al pasar el mouse */
+.image-container:hover .video-proyecto {
+  transform: scale(1.1);
+}
+.image-container:hover .overlay {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* ========= 9. FAQ (PREGUNTAS) Y CONTACTO (SECCIÓN CORREGIDA) ========= */
+.faq-contenedor {
+  max-width: 800px; /* Limita el ancho para mejor legibilidad */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacio entre cada pregunta */
+}
+
+.faq-item {
+  /* Estilo Glassmorphism */
+  background: var(--color-glass);
+  backdrop-filter: blur(var(--blur-glass));
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  border: 1px solid var(--color-borde-glass);
+  border-radius: var(--radius);
+  transition: var(--trans);
+}
+
+.faq-item:hover {
+  border-color: var(--color-cian);
+}
+
+.faq-pregunta {
+  padding: 20px 25px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-texto);
+  cursor: pointer;
+  list-style: none; /* Quita el triángulo por defecto */
+  position: relative;
+}
+
+/* Icono de "+" que se convierte en "x" (usando Font Awesome) */
+.faq-pregunta::after {
+  content: '\f067'; /* Icono de "+" de Font Awesome */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-cian);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Estilo para la respuesta */
+.faq-respuesta {
+  padding: 0 25px 25px;
+  color: var(--color-gris);
+  line-height: 1.8;
+  border-top: 1px solid var(--color-borde-glass);
+}
+
+/* --- Interacción al abrir --- */
+.faq-item[open] .faq-pregunta {
+  color: var(--color-cian); 
+}
+
+.faq-item[open] .faq-pregunta::after {
+  transform: translateY(-50%) rotate(45deg); /* Gira el "+" a "x" */
+}
+
+/* Quitar el marcador de flecha nativo del navegador */
+.faq-pregunta::-webkit-details-marker {
+  display: none;
+}
+
+/* --- Estilo de Contacto (se mantiene) --- */
+.subtitulo-contacto {
+  text-align: center;
+  color: var(--color-gris);
+  max-width: 600px;
+  margin: -40px auto 30px;
+}
+
+/* ========= 10. BOTÓN FLOTANTE Y MENÚ REDES ========= */
+.boton-redes {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  /* Botón principal con degradado */
+  background: linear-gradient(135deg, var(--color-cian), var(--color-violeta));
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 25px var(--color-cian);
+  transition: all var(--trans);
+  z-index: 1001;
+}
+.boton-redes:hover {
+  transform: translateY(-5px) scale(1.1);
+}
+.boton-redes i {
+  font-size: 1.5rem;
+  transition: transform var(--trans);
+}
+.boton-redes.activo i {
+  transform: rotate(135deg);
+}
+
+.menu-redes {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.35s ease;
+  z-index: 1000;
+}
+.menu-redes.activo {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+.menu-redes a {
+  /* Botones de redes estilo Glassmorphism */
+  color: var(--color-texto);
+  background: var(--color-glass);
+  backdrop-filter: blur(var(--blur-glass));
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--color-borde-glass);
+  transition: var(--trans);
+}
+.menu-redes a:hover {
+  background-color: var(--color-cian);
+  color: #000;
+  transform: translateX(-10px);
+  box-shadow: 0 0 15px var(--color-cian);
+}
+.menu-redes a i {
+  font-size: 1.4rem;
+}
+
+/* ========= 11. FOOTER ========= */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  background: transparent; /* Fondo transparente */
+  border-top: 1px solid var(--color-borde-glass); /* Borde de cristal */
+  font-size: 0.9rem;
+  color: var(--color-gris);
+}
+
+/* ========= 12. RESPONSIVE DESIGN ========= */
+@media (max-width: 992px) {
+  /* Apila las tarjetas de servicios en pantallas medianas */
+  .servicios-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: var(--espaciado) 5%;
+  }
+  .proceso-contenedor {
+    flex-direction: column; /* Apila los pasos del proceso */
+  }
+  .image-grid {
+    grid-template-columns: 1fr; /* Apila los proyectos */
+  }
+  .faq-contenedor {
+    max-width: 100%; /* Ocupa todo el ancho en móvil */
+  }
+
+  /* --- Menú Móvil --- */
+  .menu-toggle {
+    display: block;
+  }
+  .menu ul {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100vh;
+    /* Menú móvil con efecto Glassmorphism */
+    background: rgba(11, 15, 25, 0.85); /* Fondo más oscuro */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+  }
+  .menu ul.activo {
+    transform: translateX(0);
+  }
+}
+
+/* ========= 13. ESTILOS DEL MODAL DE CONTACTO (MÁS COMPACTO) ========= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 15, 24, 0.8);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: none;
+  opacity: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.activo {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-contenido {
+  background: var(--color-glass);
+  border: 1px solid var(--color-borde-glass);
+  backdrop-filter: blur(var(--blur-glass));
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  border-radius: var(--radius);
+  
+  /* === AQUÍ ESTÁN LOS CAMBIOS === */
+  padding: 20px 25px; /* Relleno superior/inferior muy reducido */
+  width: 100%;
+  max-width: 400px; /* Un poco más angosto */
+  /* === FIN DE CAMBIOS === */
+
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+.modal-overlay.activo .modal-contenido {
+  transform: translateY(0);
+}
+
+.modal-cerrar {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: var(--color-gris);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.modal-cerrar:hover {
+  color: var(--color-cian);
+  transform: rotate(90deg);
+}
+
+.modal-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.modal-header i {
+  font-size: 2rem; /* Icono más chico */
+  color: var(--color-cian);
+  margin-bottom: 5px;
+}
+.modal-header h2 {
+  font-size: 1.5rem; /* Título más chico */
+  font-weight: 700;
+  color: var(--color-texto);
+}
+.modal-descripcion {
+  text-align: center;
+  color: var(--color-gris);
+  font-size: 0.9rem; /* Texto más chico */
+  margin-bottom: 20px; /* Margen reducido */
+}
+
+/* Formulario */
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espacio entre campos reducido */
+}
+.modal-form label {
+  font-size: 0.8rem; /* Etiqueta más chica */
+}
+.modal-form input,
+.modal-form textarea {
+  padding: 12px; /* Relleno de campos reducido */
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--color-borde-glass);
+  border-radius: 8px;
+  color: var(--color-texto);
+  font-family: var(--fuente);
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.modal-form input:focus,
+.modal-form textarea:focus {
+  outline: none;
+  border-color: var(--color-cian);
+  box-shadow: 0 0 10px rgba(0, 246, 255, 0.3);
+}
+.modal-form textarea {
+  resize: vertical;
+  min-height: 80px; /* Altura mínima del campo de texto reducida */
+}
+
+/* Botón de enviar */
+.btn-submit {
+  margin-top: 10px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1rem; /* Botón más chico */
+  padding: 14px 30px; /* Relleno de botón reducido */
+}
+
+button.btn {
+  font-family: var(--fuente);
+  cursor: pointer;
+}

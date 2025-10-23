@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portafolio profesional de [Luis Edwin ], desarrollador web especializado en crear sitios web modernos y funcionales." />
+  <title>Luis Edwin — Desarrollador Web Profesional</title>
+
+  <link rel="stylesheet" href="hojaestilo.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+
+<body>
+  <header>
+    <a href="#inicio" class="logo">MTZ Connect</a>
+    <nav class="menu">
+      <ul id="menu-lista">
+        <li><a href="#inicio" class="activo">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#proceso">Mi Proceso</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#faq">Preguntas</a></li> 
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <h1>Convierto tus Ideas en <br><span>Realidad Digital</span></h1>
+        <p>
+          Hola, soy [Tu Nombre]. Diseño y desarrollo páginas web a medida que son rápidas, atractivas y fáciles de usar para que tu negocio crezca.
+        </p>
+        <a href="#proyectos" class="btn">Ver mis trabajos</a>
+      </div>
+    </section>
+
+    <section id="servicios">
+        <h2 class="titulo-seccion">Mis Servicios</h2>
+        <div class="servicios-grid">
+            <div class="service">
+                <i class="fas fa-palette"></i>
+                <h3>Diseño Web a Medida</h3>
+                <p>Creo diseños únicos y profesionales que reflejan la identidad de tu marca y atraen a tus clientes.</p>
+            </div>
+            <div class="service">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Desarrollo Web Completo</h3>
+                <p>Construyo sitios web robustos y optimizados, desde páginas informativas hasta tiendas en línea.</p>
+            </div>
+            <div class="service">
+                <i class="fas fa-rocket"></i>
+                <h3>Optimización y SEO</h3>
+                <p>Mejoro la velocidad de tu web y la optimizo para que aparezca en los primeros lugares de Google.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="proceso" class="seccion-clara">
+        <h2 class="titulo-seccion">Mi Proceso de Trabajo</h2>
+        <div class="proceso-contenedor">
+            <div class="paso">
+                <div class="numero">1</div>
+                <h3>Consulta y Estrategia</h3>
+                <p>Entendemos tus objetivos para definir el plan perfecto para tu sitio web.</p>
+            </div>
+            <div class="paso">
+                <div class="numero">2</div>
+                <h3>Diseño y Prototipo</h3>
+                <p>Creamos una propuesta visual atractiva y funcional para tu aprobación.</p>
+            </div>
+            <div class="paso">
+                <div class="numero">3</div>
+                <h3>Desarrollo y Programación</h3>
+                <p>Damos vida al diseño con código limpio, eficiente y adaptable a todos los dispositivos.</p>
+            </div>
+            <div class="paso">
+                <div class="numero">4</div>
+                <h3>Lanzamiento y Soporte</h3>
+                <p>Publicamos tu web y te ofrezco soporte para asegurar su éxito continuo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos">
+      <h2 class="titulo-seccion">Proyectos Destacados</h2>
+      <div class="image-grid">
+          <div class="image-container">
+              <video class="video-proyecto" autoplay loop muted playsinline>
+                  <source src="14.mp4" type="video/mp4">
+                  Tu navegador no soporta el tag de video.
+              </video>
+              <div class="overlay">
+                  <h3>Sitio Corporativo</h3>
+              </div>
+          </div>
+          <div class="image-container">
+              <video class="video-proyecto" autoplay loop muted playsinline>
+                  <source src="12.mp4" type="video/mp4">
+                  Tu navegador no soporta el tag de video.
+              </video>
+              <div class="overlay">
+                  <h3>Tienda en Línea</h3>
+              </div>
+          </div>
+          <div class="image-container">
+              <video class="video-proyecto" autoplay loop muted playsinline>
+                  <source src="13.mp4" type="video/mp4">
+                  Tu navegador no soporta el tag de video.
+              </video>
+              <div class="overlay">
+                  <h3>Sitio Refaccionaria</h3>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <section id="faq" class="seccion-clara">
+        <h2 class="titulo-seccion">Preguntas Frecuentes</h2>
+        <div class="faq-contenedor">
+            <details class="faq-item">
+                <summary class="faq-pregunta">¿Qué tipo de servicios web ofreces?</summary>
+                <div class="faq-respuesta">
+                    <p>Ofrezco un paquete completo, que incluye Diseño Web a Medida, Desarrollo Web Completo (desde páginas informativas hasta tiendas en línea) y Optimización y SEO básico para mejorar tu visibilidad en Google.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-pregunta">¿Cuánto tiempo toma un proyecto web?</summary>
+                <div class="faq-respuesta">
+                    <p>El tiempo varía según la complejidad. Un sitio web informativo simple puede tomar de 2 a 4 semanas, mientras que una tienda en línea o un proyecto a medida puede tomar de 6 a 12 semanas. Tras nuestra consulta inicial, te daré un cronograma detallado.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-pregunta">¿Mi sitio web se verá bien en teléfonos móviles?</summary>
+                <div class="faq-respuesta">
+                    <p>¡Absolutamente! El diseño 100% responsivo es estándar en todos mis proyectos. Tu sitio web se adaptará perfectamente a cualquier tamaño de pantalla (móviles, tablets, computadoras), garantizando una excelente experiencia de usuario.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-pregunta">¿En qué tecnologías te especializas?</summary>
+                <div class="faq-respuesta">
+                    <p>Me especializo en tecnologías web modernas como HTML5, CSS3 y JavaScript. Para proyectos más complejos, utilizo [Menciona aquí tu framework, ej: React, Vue] y para el backend [Menciona aquí, ej: Node.js, PHP]. También tengo experiencia con gestores de contenido como WordPress.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-pregunta">¿Cómo manejas las pruebas y la calidad?</summary>
+                <div class="faq-respuesta">
+                    <p>La calidad es mi prioridad. Realizo pruebas exhaustivas en múltiples dispositivos y navegadores (Chrome, Firefox, Safari) para asegurar que tu sitio funcione perfectamente. También optimizo la velocidad de carga y el rendimiento general.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-pregunta">¿Ofreces soporte o mantenimiento después del lanzamiento?</summary>
+                <div class="faq-respuesta">
+                    <p>Sí. Después del lanzamiento, ofrezco un período de soporte gratuito de 30 días para corregir cualquier error. Adicionalmente, podemos acordar un plan de mantenimiento mensual para mantener tu sitio actualizado, seguro y funcionando sin problemas.</p>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2 class="titulo-seccion">¿Listo para empezar?</h2>
+        <p class="subtitulo-contacto">Hablemos sobre tu proyecto. ¡Estoy aquí para ayudarte a tener éxito en línea!</p>
+        <div style="text-align: center; margin-top: 30px;">
+            <button id="btn-abrir-modal" class="btn">Enviar Mensaje</button>
+        </div>
+    </section>
+  </main>
+
+  <div class="modal-overlay" id="modal-contacto">
+    <div class="modal-contenido">
+        
+        <button class="modal-cerrar" id="modal-cerrar">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <div class="modal-header">
+            <i class="fas fa-envelope"></i>
+            <h2>Contáctame</h2>
+        </div>
+        <p class="modal-descripcion">
+            ¡Quiero saber más de tu proyecto! Déjame tu información y me pondré en contacto contigo.
+        </p>
+
+        <form class="modal-form" action="https://formspree.io/f/xblzvzlg" method="POST">
+            
+            <label for="nombre">Nombre*</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+
+            <label for="correo">Correo*</label>
+            <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo" required>
+
+            <label for="detalles">Detalles del proyecto*</label>
+            <textarea id="detalles" name="detalles" rows="4" placeholder="Ingresa los detalles del proyecto" required></textarea>
+
+            <button type="submit" class="btn btn-submit">Enviar mensaje</button>
+        
+        </form>
+    </div>
+  </div>
+
+
+  <footer>
+    <p>&copy; 2025 [MTZ Connect] — Todos los derechos reservados.</p>
+  </footer>
+
+  <div class="boton-redes" id="botonRedes">
+    <i class="fas fa-plus"></i>
+  </div>
+
+  <div class="menu-redes" id="menuRedes">
+    <a href="https://www.instagram.com/mtzc.onnect01/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61582896171949" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://wa.me/5540840809" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.tiktok.com/@mtzconnect01" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Menú de redes sociales
+      const botonRedes = document.getElementById('botonRedes');
+      const menuRedes = document.getElementById('menuRedes');
+      if (botonRedes) {
+        botonRedes.addEventListener('click', (e) => {
+          e.stopPropagation();
+          botonRedes.classList.toggle('activo');
+          menuRedes.classList.toggle('activo');
+        });
+      }
+
+      // Menú de navegación móvil
+      const menuToggle = document.getElementById('menu-toggle');
+      const menuLista = document.getElementById('menu-lista');
+      if (menuToggle) {
+          menuToggle.addEventListener('click', () => menuLista.classList.toggle('activo'));
+      }
+
+      // Cerrar menús al hacer clic fuera
+      document.addEventListener('click', (e) => {
+        if (menuRedes && menuRedes.classList.contains('activo')) {
+          menuRedes.classList.remove('activo');
+          botonRedes.classList.remove('activo');
+        }
+        if (menuLista && menuLista.classList.contains('activo')) {
+            menuLista.classList.remove('activo');
+        }
+      });
+      
+      // Script para FAQ
+      const allFaqs = document.querySelectorAll('.faq-item');
+      allFaqs.forEach(item => {
+        item.addEventListener('toggle', event => {
+          if (item.open) {
+            allFaqs.forEach(otherItem => {
+              if (otherItem !== item && otherItem.open) {
+                otherItem.open = false;
+              }
+            });
+          }
+        });
+      });
+
+      // --- ¡NUEVO! SCRIPT PARA EL MODAL DE CONTACTO ---
+      const btnAbrirModal = document.getElementById('btn-abrir-modal');
+      const modalOverlay = document.getElementById('modal-contacto');
+      const btnCerrarModal = document.getElementById('modal-cerrar');
+
+      if (btnAbrirModal && modalOverlay && btnCerrarModal) {
+          // Abrir el modal
+          btnAbrirModal.addEventListener('click', () => {
+              modalOverlay.classList.add('activo');
+          });
+
+          // Cerrar el modal con el botón 'X' (la "opción de quitar")
+          btnCerrarModal.addEventListener('click', () => {
+              modalOverlay.classList.remove('activo');
+          });
+
+          // Cerrar el modal al hacer clic en el fondo (overlay)
+          modalOverlay.addEventListener('click', (e) => {
+              if (e.target === modalOverlay) {
+                  modalOverlay.classList.remove('activo');
+              }
+          });
+      }
+
+    });
+  </script>
+</body>
+</html>
